@@ -1,0 +1,17 @@
+<p>List of Library Items</p>
+
+name:<input type="text" value="name" [(ngModel)] = "name">
+type:<input type="text" value="type" [(ngModel)] = "type">
+loan period:<input type="text" value="loan_period" [(ngModel)] = "loan_period">
+<input type="button" value="Create Item" (click)="createItem()">
+
+<input type="button" value="Refresh Items" (click)="refreshDb()">
+
+<ul *ngIf="library">
+    <p> {{ type }}</p>
+    <li *ngFor ="let item of library">
+        <p>name: {{ item.name }}</p>
+        <p>type: {{ item.type }}</p>
+        <p>loan period: {{ item.loan_period }}</p>
+    </li>
+</ul>
